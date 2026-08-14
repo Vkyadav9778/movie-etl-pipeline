@@ -1,0 +1,32 @@
+-- creates the 4 tables in Snowflake, run once before loading data
+-- movie_id is the key that connects all of them together
+
+CREATE TABLE IF NOT EXISTS MOVIES (
+    MOVIE_ID INT,
+    NAME VARCHAR(255),
+    GENRE VARCHAR(100),
+    YEAR INT,
+    RUNTIME FLOAT,
+    COUNTRY VARCHAR(100),
+    COMPANY VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS RATINGS (
+    MOVIE_ID INT,
+    SCORE FLOAT,
+    VOTES FLOAT,
+    RATING VARCHAR(20)
+);
+
+CREATE TABLE IF NOT EXISTS FINANCIALS (
+    MOVIE_ID INT,
+    BUDGET FLOAT,
+    GROSS FLOAT
+);
+
+CREATE TABLE IF NOT EXISTS PEOPLE (
+    MOVIE_ID INT,
+    DIRECTOR VARCHAR(255),
+    WRITER VARCHAR(255),
+    STAR VARCHAR(255)
+);
